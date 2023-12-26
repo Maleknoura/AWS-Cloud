@@ -1,4 +1,20 @@
+<?php
+require_once "./Controleur/index_controleur.php";
+ob_start();
+?>
+
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./Contenu/style/style_index.css">
+    
+    <title>Document</title>
+</head>
+<body>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,11 +27,11 @@
     <div class="bg-rgba-card p-4 rounded-lg shadow-xl max-w-md w-full">
         <img src="../images/logoaws-removebg-preview.png" alt="" width="290px" height="90px" class="mx-auto">
         <div class="flex items-center justify-center">
-            <form action="layout2.php" method="post">
+            <form  method="post">
                 <div class="mb-4 mr-5">
-                    <input type="text" id="username" name="username" placeholder=" Pseudoname" class="w-full sm:w-64 border-2 border-gray-300 p-2 rounded-md focus:outline-none focus:border-blue-500 transition-all duration-300 center">  
+                    <input type="text" id="username" name="pseudo" placeholder=" Pseudoname" class="w-full sm:w-64 border-2 border-gray-300 p-2 rounded-md focus:outline-none focus:border-blue-500 transition-all duration-300 center">  
                 </div>      
-                <button type="button" class="w-full text-white bg-gradient-to-br from-purple-900 to-blue-800 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Valider</button>   
+                <button type="submit" name="commancer" class="w-full text-white bg-gradient-to-br from-purple-900 to-blue-800 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">START</button>   
             </form>
         </div>
     </div>
@@ -25,7 +41,7 @@
     </div>
 
     <script>
-        const textToAnimate = "Cree ton propre Quiz gratuitement sur AWS Cloud Practitioner ";
+        const textToAnimate = "Cree ton propre Quiz  sur AWS Cloud Practitioner ";
         const textContainer = document.getElementById("text-container");
 
         function animateText() {
@@ -45,3 +61,8 @@
     </script>
 </body>
 </html>
+ 
+      
+</body>
+</html>
+<?php $content = ob_get_clean();?>
