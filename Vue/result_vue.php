@@ -16,14 +16,14 @@ $objetResult->terminer();
 </head>
 <body>
     <header>
-        <div class="logo"></div>
-        <button id="toggleCorrectionBtn">Correction</button>
+        <!-- <div class="logo"></div> -->
+        <!-- <button id="toggleCorrectionBtn">Correction</button> -->
     </header>
     <section class="sec1">
         <?php if ($objetResult->scoreContoleur() >= 7) : ?>
-            <h2>Félicitation, vous avez réussi le quizz</h2>
+            <h2>Congratulations le Podium est a vous !</h2>
         <?php else : ?>
-            <h2>Malheureusement, vous avez raté le quizz</h2>
+            <h2>Malheureusement, essayez la prochaine fois </h2>
         <?php endif; ?>
         <h2>Votre score est : <?php echo $objetResult->scoreContoleur() * 10; ?>/100</h2>
         <?php $objetResult->Correction(); ?>

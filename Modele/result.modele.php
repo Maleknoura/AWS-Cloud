@@ -22,10 +22,10 @@ class Resultat{
         $this->db = new db();
         $pdo = $this->db->connect();
 
-        $query = "INSERT INTO resultat (idquestion,idresultat) values (?,?)";
+        $query = "INSERT INTO resultat (idquestion,idreponse) values (?,?)";
         $stmt = $pdo->prepare($query);
         $stmt->bindParam( 1 ,$this->idquestion);
-        $stmt->bindParam( 2 ,$this->idresultat);
+        $stmt->bindParam( 2 ,$this->idreponse);
         
         if($stmt->execute())
             return true;
@@ -36,9 +36,9 @@ class Resultat{
         $this->db = new db();
         $pdo = $this->db->connect();
     
-        $query = "SELECT COUNT(rs.idResultat) as total FROM resultat rs
+        $query = "SELECT COUNT(rs.idresultat) as total FROM resultat rs
                   JOIN reponses rp ON rp.idreponse = rs.idreponse
-                  WHERE rp.statut = 1";
+                  WHERE rp.reponsestatut = 1";
         
         $stmt = $pdo->prepare($query);
     
@@ -68,8 +68,8 @@ class Resultat{
         $this->db = new db();
         $pdo = $this->db->connect();
     
-        $query = "SELECT rp.statut  , q.idquestion , rp.reponse FROM reponses rp 
-                    JOIN resultat rs ON rs.idresultat = rp.idresultat
+        $query = "SELECT rp.reponsestatut  , q.idquestion , rp.reponsecontent FROM reponses rp 
+                    JOIN resultat rs ON rs.idreponse = rp.idreponse
                     JOIN questions q ON q.idquestion = rp.idquestion";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
@@ -84,7 +84,7 @@ class Resultat{
     
         $this->idquestion = $idquestion;
         $query = "SELECT justification FROM reponses 
-                WHERE statut = 1 AND idquestion = ?";
+                WHERE reponsestatut = 1 AND idquestion = ?";
         
         $stmt = $pdo->prepare($query);
         $stmt->bindParam(1, $this->idquestion, PDO::PARAM_INT);

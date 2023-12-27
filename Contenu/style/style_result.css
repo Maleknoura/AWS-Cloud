@@ -6,23 +6,14 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #59738D;
+    /* background-color: #59738D; */
     height: 100vh;
 }
 header{
     display: flex;
     justify-content: space-between;
 }
-header .logo {
-    background-image: url(./../images/logo.png);
-    width: 120px; 
-    height: 50px; 
-    background-size: cover;
-    background-position: center;
-    border-radius: 90px;
-    margin-left: 50px;
-    margin-top: 20px;
-}
+
 header button {
     width: 7vw;
     height: 2.5vw;
@@ -40,8 +31,7 @@ header button:hover {
 }
 .sec1{
     display: flex;
-    /* justify-content: center;
-    align-items: center; */
+    
     flex-direction: column;
 }
 
